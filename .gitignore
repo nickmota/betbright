@@ -1,0 +1,12 @@
+*.log
+.DS_Store
+*.pyc
+*.csv
+.python-version
+*.env
+.idea
+csvs/
+*.xlsx
+*.ini
+*.png
+*.pkl
