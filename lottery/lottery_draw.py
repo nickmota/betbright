@@ -1,25 +1,10 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+import sys
+
 from datetime import datetime, timedelta
 
 from .validates import validate_date
-
-
-def calculate_next_draw_date(date_time=None):
-    '''
-        Calculates which is the next date of
-        the draw based on a specific day or the current date
-        params:
-        date_time: Specific date to calculate the next draw
-    '''
-    date_time = validate_date(date_time) if date_time else datetime.now()
-    
-    wednesday = get_next_wednesday(date_time)
-    saturday = get_next_saturday(date_time)
-
-    if date_time <= wednesday <= saturday:
-        return wednesday.strftime('%d-%m-%Y %A %H:%M')
-
-    return saturday.strftime('%d-%m-%Y %A %H:%M')
-
 
 
 def get_next_wednesday(date_time):
@@ -54,3 +39,30 @@ def get_next_saturday(date_time):
         saturday += timedelta(days=7)
 
     return saturday
+
+
+def calculate_next_draw_date(date_time=None):
+    '''
+        Calculates which is the next date of
+        the draw based on a specific day or the current date
+        params:
+        date_time: Specific date to calculate the next draw
+    '''
+    date_time = validate_date(date_time) if date_time else datetime.now()
+    
+    wednesday = get_next_wednesday(date_time)
+    saturday = get_next_saturday(date_time)
+
+    if date_time <= wednesday <= saturday:
+        return wednesday.strftime('%d-%m-%Y %A %H:%M')
+
+    return saturday.strftime('%d-%m-%Y %A %H:%M')
+
+
+if __name__ == '__main__':
+    try:
+        date = ' '.join(sys.argv[1:])
+        next_date = calculate_next_draw_date(date)
+        print next_date
+    except IndexError:
+        sys.exit("A date is expected in the format: 'dd-mm-yyyy HH:MM'")

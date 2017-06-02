@@ -14,7 +14,7 @@ Tests requested by betbright
 
 ## Running the questions:
 - Date Calculation:
-    `make run-date-calculation`
+    `make run-date-calculation date_time="20-05-2017 10:00"`
 - Least recently used cache
     `make run-lru`
 - Find the anagram

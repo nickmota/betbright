@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import pytest
 from ..lottery_draw import calculate_next_draw_date
 
