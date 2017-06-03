@@ -1,7 +1,8 @@
 # Betbright Test
 
-Tests requested by betbright
+![betbright](betbright.png)
 
+Tests requested by betbright
 
 ## Installation
 - Create and activate a [virtualenv](https://virtualenv.pypa.io/) with python 2.7.
