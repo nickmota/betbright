@@ -1,17 +1,20 @@
-import pytest
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+import datetime
+import unittest
+from betbright.lottery.validates import validate_date
 
-from ..validates import validate_date
 
-
-class TestValidate(object):
+class TestValidate(unittest.TestCase):
 
     def test_should_validate_correct_date(self):
-        validate_date('02-06-2017 10:00')
+        date = validate_date('02-06-2017 10:00')
+        self.assertEqual(date, datetime.datetime(2017, 6, 2, 10, 0))
 
     def test_should_except_when_date_is_incorrect_format(self):
-        with pytest.raises(ValueError):
+        with self.assertRaises(ValueError):
             validate_date('2017-03-02')
 
     def test_should_except_when_date_is_not_string(self):
-        with pytest.raises(ValueError):
+        with self.assertRaises(ValueError):
             validate_date(2017)

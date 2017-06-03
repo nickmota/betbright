@@ -1,4 +1,7 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 from datetime import datetime
+
 
 def validate_date(date_text):
     if not isinstance(date_text, str):
