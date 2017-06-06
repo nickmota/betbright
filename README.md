@@ -19,6 +19,8 @@ Tests requested by betbright
 - Date Calculation:
 
     `make run-date-calculation date_time="20-05-2017 10:00"`
+    
+    Ps: If date_time is not informed, the calculation will be done with the current date
 
 - Least recently used cache
 
